@@ -1,0 +1,50 @@
+.login-dialog-container {
+  --width: 50vw;
+  --height: 80vh;
+  --text-color: #37474f;
+
+  background-color: white;
+  position: absolute;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 6px;
+  margin-top: calc(var(--height) / (-2));
+  margin-left: calc(var(--width) / (-2));
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 1px 5px grey;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.profile-capture {
+  width: 240px;
+  height: 240px;
+  float: left;
+  margin-right: 35px;
+  margin-top: 30px;
+}
+
+.login-dialog-title {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.login-dialog-subtitle {
+  font-weight: 100;
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.login-credentials {
+  width: 50%;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+.login-button {
+  float: right;
+  cursor: e-resize;
+}

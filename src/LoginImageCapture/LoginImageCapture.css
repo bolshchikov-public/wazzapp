@@ -1,0 +1,45 @@
+.capture-actions {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -45px;
+  z-index: 10;
+  position: relative;
+  opacity: 0.8;
+}
+
+.flip-container {
+	perspective: 1000px;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back, .capture-frame {
+	width: 240px;
+  height: 180px;
+  border-radius: 6px;
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+  background-color: black;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
