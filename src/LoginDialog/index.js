@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './LoginDialog.css';
 import LoginImageCapture from '../LoginImageCapture';
+import * as firebase from 'firebase/app';
 
 class LoginDialog extends Component {
 
@@ -26,10 +27,11 @@ class LoginDialog extends Component {
   }
 
   _save() {
-    return new Promise((resolve, reject) => {
-      window.localStorage.setItem('wazzapp-user', JSON.stringify(this.state));
-      console.log('send data to firebase', this.state);
-      resolve();
+    window.localStorage.setItem('wazzapp-user', JSON.stringify(this.state));
+    return firebase.database().ref(`users/${this.state.phoneNumber}`).set({
+      userName: this.state.userName,
+      phoneNumber: this.state.phoneNumber,
+      imageData: this.state.imageData
     });
   }
 

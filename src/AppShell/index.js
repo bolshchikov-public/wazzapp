@@ -2,11 +2,21 @@
 import React, { Component } from 'react';
 import App from '../App';
 import Login from '../Login';
+import * as firebase from 'firebase/app';
+import 'firebase/database';
 
 class AppShell extends Component {
 
   constructor() {
     super();
+    firebase.initializeApp({
+      apiKey: 'AIzaSyC3EaZqKldK4cz9lYGkLHh5NmPvICL-vVQ',
+      authDomain: 'wazzapp-4b5cf.firebaseapp.com',
+      databaseURL: 'https://wazzapp-4b5cf.firebaseio.com',
+      projectId: 'wazzapp-4b5cf',
+      storageBucket: 'wazzapp-4b5cf.appspot.com',
+      messagingSenderId: '452145776981'
+    });
     const currentUser = JSON.parse(window.localStorage.getItem('wazzapp-user'));
     currentUser ?
       this.state = this._generateLoggedInState(currentUser) :
