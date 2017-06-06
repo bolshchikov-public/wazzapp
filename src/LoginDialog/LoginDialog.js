@@ -27,6 +27,7 @@ class LoginDialog extends Component {
 
   _save() {
     return new Promise((resolve, reject) => {
+      window.localStorage.setItem('wazzapp-user', JSON.stringify(this.state));
       console.log('send data to firebase', this.state);
       resolve();
     });

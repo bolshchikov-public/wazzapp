@@ -7,9 +7,17 @@ class AppShell extends Component {
 
   constructor() {
     super();
-    this.state = {
-      isLoggedIn: false,
-      currentUser: null
+    const currentUser = JSON.parse(window.localStorage.getItem('wazzapp-user'));
+    if (currentUser) {
+      this.state = {
+        isLoggedIn: true,
+        currentUser
+      }
+    } else {
+      this.state = {
+        isLoggedIn: false,
+        currentUser: null
+      }
     }
   }
 
