@@ -1,6 +1,6 @@
 .capture-actions {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-top: -50px;
   z-index: 10;
   position: relative;
