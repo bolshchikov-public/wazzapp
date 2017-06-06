@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div>
         This is chat
+        User: {JSON.stringify(this.props.currentUser)}
       </div>
     );
   }

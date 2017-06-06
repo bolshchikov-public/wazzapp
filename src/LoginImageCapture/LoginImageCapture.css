@@ -1,7 +1,7 @@
 .capture-actions {
   display: flex;
   justify-content: space-evenly;
-  margin-top: -45px;
+  margin-top: -50px;
   z-index: 10;
   position: relative;
   opacity: 0.8;

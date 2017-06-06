@@ -20,6 +20,10 @@ body {
   cursor: pointer;
 }
 
+.button[disabled] {
+  opacity: 0.5;
+}
+
 .button-big {
   width: 100px;
   height: 37px;

@@ -48,3 +48,17 @@
   float: right;
   cursor: e-resize;
 }
+
+.login-dialog-validations {
+  --validation-width: 200px;
+  position: absolute;
+  color: red;
+  font-size: 13px;
+  right: calc(10px - var(--validation-width));
+  width: var(--validation-width);
+  text-indent: 4px;
+}
+
+.login-dialog-validations > ol {
+  margin: 0;
+}

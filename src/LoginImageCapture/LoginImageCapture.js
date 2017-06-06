@@ -10,8 +10,18 @@ class LoginImageCapture extends Component {
     }
   }
 
-  outputVideo(stream) {
+  _startVideo() {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => this._startVideoSuccess(stream));
+  }
+
+  _startVideoSuccess(stream) {
     this.player.srcObject = stream;
+    this.videoTracks = stream.getVideoTracks();
+  }
+
+  _stopVideo() {
+    this.videoTracks.forEach(track => track.stop());
   }
 
   captureImage() {
@@ -20,6 +30,7 @@ class LoginImageCapture extends Component {
     this.setState({
       captured: true
     });
+    this.props.onCapture(this.canvas.toDataURL());
   }
 
   discardImage() {
@@ -28,9 +39,13 @@ class LoginImageCapture extends Component {
     });
   }
 
+  componentWillUnmount() {
+    this._stopVideo();
+  }
+
+
   componentDidMount() {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then((stream) => this.outputVideo(stream));
+    this._startVideo()
   }
 
   render() {
@@ -44,16 +59,17 @@ class LoginImageCapture extends Component {
           <div className={flipClass}>
             <div className="front">
               <video className="capture-frame" autoPlay ref={el => { this.player = el }} />
+              <div className="capture-actions">
+                <button className="button button-small" onClick={this.captureImage.bind(this)}>CAPTURE</button>
+              </div>
             </div>
             <div className="back">
               <canvas className="capture-frame" width="220" height="220" ref={el => { this.canvas = el }} />
+              <div className="capture-actions">
+                <button className="button button-small button-reject" onClick={this.discardImage.bind(this)}>DISCARD</button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="capture-actions">
-          <button className="button button-small" onClick={this.captureImage.bind(this)}>CAPTURE</button>
-          <button className="button button-small button-reject" onClick={this.discardImage.bind(this)}>DISCARD</button>
         </div>
       </div>
     )

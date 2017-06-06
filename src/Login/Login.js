@@ -8,7 +8,7 @@ class Login extends Component {
       <div className="login-container">
         <div className="login-top"></div>
         <div className="login-bottom"></div>
-        <LoginDialog />
+        <LoginDialog onLogin={this.props.onLogin}/>
       </div>
     )
   }
