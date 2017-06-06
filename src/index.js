@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppShell from './AppShell/AppShell';
+import AppShell from './AppShell';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 

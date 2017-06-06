@@ -1,0 +1,7 @@
+.user-management-container {
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

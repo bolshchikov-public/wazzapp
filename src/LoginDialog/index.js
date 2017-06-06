@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './LoginDialog.css';
-import LoginImageCapture from '../LoginImageCapture/LoginImageCapture';
+import LoginImageCapture from '../LoginImageCapture';
 
 class LoginDialog extends Component {
 

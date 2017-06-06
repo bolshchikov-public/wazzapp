@@ -1,6 +1,8 @@
 // @ts-check
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
+import UserManagement from '../UserManagement';
 
 class App extends Component {
 
@@ -14,7 +16,12 @@ class App extends Component {
   render() {
     return (
       <div className="chat-container">
-        <div className="chat-list-container"></div>
+        <div className="chat-list-container">
+          <UserManagement
+            currentUser={this.props.currentUser}
+            onLogout={this.props.onLogout}
+          />
+        </div>
         {
           this.state.currentChat ?
             <div className="chat-conversation-container"></div> :
@@ -25,6 +32,11 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  currentUser: PropTypes.object.isRequired,
+  onLogout: PropTypes.func.isRequired
 }
 
 export default App;
