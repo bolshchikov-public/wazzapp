@@ -1,9 +1,13 @@
 .chat-item-container {
   display: flex;
   flex-direction: row;
-  margin: 0 15px;
-  padding: 5px 0;
+  padding: 5px 15px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #f7f7f7;  
+  cursor: pointer;
+}
+
+.chat-item-container:hover {
+  background-color: #f4f5f5;
 }
