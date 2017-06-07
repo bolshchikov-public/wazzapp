@@ -1,0 +1,3 @@
+.filtered-chat-list-container {
+  height: calc(100% - 60px);
+}

@@ -4,11 +4,11 @@ import './UserManagement.css';
 import ProfileImage from '../ProfileImage';
 import Logout from '../Logout';
 
-const UserManagement = ({currentUser, onLogout}) => {
+const UserManagement = ({ currentUser, onLogout }) => {
   return (
     <div className="user-management-container">
-      <ProfileImage user={currentUser}/>
-      <Logout onLogout={onLogout}/>
+      <ProfileImage user={currentUser} />
+      <Logout onLogout={onLogout} />
     </div>
   )
 }

@@ -11,7 +11,7 @@ class LoginDialog extends Component {
       imageData: null,
       phoneNumber: null,
       userName: null
-    }
+    };
   }
 
   _hasValidImageData() {

@@ -9,10 +9,10 @@ const ProfileImage = ({user}) => {
       <img src={user.imageData} alt={user.userName}/>
     </div>
   )
-}
+};
 
-ProfileImage.PropTypes = {
-  imageData: PropTypes.string.isRequired
-}
+ProfileImage.propTypes = {
+  user: PropTypes.object.isRequired
+};
 
-export default ProfileImage
+export default ProfileImage;

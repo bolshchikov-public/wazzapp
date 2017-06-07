@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import UserManagement from '../UserManagement';
+import FilteredChatList from '../FilteredChatList';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
             currentUser={this.props.currentUser}
             onLogout={this.props.onLogout}
           />
+          <FilteredChatList currentUser={this.props.currentUser}/>
         </div>
         {
           this.state.currentChat ?

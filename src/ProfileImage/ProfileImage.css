@@ -1,14 +1,16 @@
 .profile-image-container {
-  --image-width: 48px;
-  --image-height: 48px;
-  width: var(--image-width);
-  height: var(--image-height);
+  --image-dimension: 48px;
+  width: var(--image-dimension);
+  height: var(--image-dimension);
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: relative;
+  overflow: hidden;
 }
 
 .profile-image-container img {
-  width: var(--image-width);
-  height: var(--image-height);
-  border-radius: 50%;
-  border: 1px solid grey;
+  width: calc(var(--image-dimension) * 1.33);
+  height: var(--image-dimension);
+  transform: translateX(-10%);
 }
 

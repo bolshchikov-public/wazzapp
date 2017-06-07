@@ -7,7 +7,7 @@
 }
 
 .chat-list-container {
-  background-color: #eeeeee;
+  background-color: white;
   width: var(--chat-list-width);
   height: 100%;
   flex-shrink: 0;
