@@ -5,30 +5,32 @@
 wazzup: {
   users: {
     1234: {
-      name: 'Sergey Bolshchikov'
-      img: 'http://static.storage.com/1234',
-      chats: {
-        one: true
+      userName: 'Sergey Bolshchikov'
+      imageData: 'http://static.storage.com/1234',
+      phoneNumber: 1234
+      chatsWith: {
+        4567: 'one'
       }
     },
     9876: {
-      name: 'Anna Fridman'
-      img: 'http://static.storage.com/9876',
-      chats: {}
+      userName: 'Anna Fridman'
+      imageData: 'http://static.storage.com/9876',
+      phoneNumber: 9876
+      chatsWith: {}
     },
     4567: {
-      name: 'Oren Rubon',
-      img: 'http://static.storage.com/4567',
-      chats: {
-        one: true
+      userName: 'Oren Rubon',
+      imageData: 'http://static.storage.com/4567',
+      phoneNumber: 4567
+      chatsWith: {
+        1234: 'one'
       }
     }
   }
   chats: {
     one: {
       lastMessage: 'Hello my friend',
-      timestamp: 1496234742258,
-      members: [1234, 4567]
+      timestamp: 1496234742258
     }
   },
   messages: {

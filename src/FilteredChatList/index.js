@@ -23,7 +23,7 @@ class FilteredChatList extends Component {
           Object
             .keys(this.state)
             .filter(phoneNumber => phoneNumber !== this.props.currentUser.phoneNumber)
-            .map(phoneNumber => <ChatListItem key={phoneNumber} user={this.state[phoneNumber]} />)
+            .map(phoneNumber => <ChatListItem key={phoneNumber} user={this.state[phoneNumber]} onSelect={this.props.onSelect}/>)
         }
       </div>
     );
@@ -34,7 +34,8 @@ class FilteredChatList extends Component {
 }
 
 FilteredChatList.propTypes = {
-  currentUser: PropTypes.object.isRequired
+  currentUser: PropTypes.object.isRequired,
+  onSelect: PropTypes.func.isRequired
 };
 
 export default FilteredChatList;

@@ -1,0 +1,8 @@
+.chat-conversation-container {
+  width: 100%;
+  height: 100%;
+  background-image: url('./chat-background.png');
+  background-color: #e0b78d;
+  background-size: contain;
+  opacity: 0.3;
+}
