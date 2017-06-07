@@ -3,9 +3,9 @@
   width: var(--image-dimension);
   height: var(--image-dimension);
   border-radius: 50%;
-  border: 1px solid grey;
   position: relative;
   overflow: hidden;
+  margin: 2px 0;
 }
 
 .profile-image-container img {
