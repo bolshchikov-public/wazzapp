@@ -1,0 +1,8 @@
+.user-row {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 15px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; 
+}

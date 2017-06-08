@@ -1,0 +1,7 @@
+.chat-container-wrapper {
+  flex-grow: 1;
+}
+
+.chat-container-header {
+  background-color: white;
+}

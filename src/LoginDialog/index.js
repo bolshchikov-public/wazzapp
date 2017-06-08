@@ -19,7 +19,7 @@ class LoginDialog extends Component {
   }
 
   _hasValidPhoneNumber() {
-    return this.state.phoneNumber !== null && this.state.phoneNumber.length === 10;
+    return this.state.phoneNumber !== null && this.state.phoneNumber.length > 1;
   }
 
   _hasValidUserName() {

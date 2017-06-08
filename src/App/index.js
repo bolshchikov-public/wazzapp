@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import * as firebase from 'firebase/app';
+import ChatShell from '../ChatShell';
 import UserManagement from '../UserManagement';
-import ChatConversation from '../ChatConversation';
 import FilteredChatList from '../FilteredChatList';
 
 class App extends Component {
@@ -12,7 +12,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentChat: null
+      currentChat: null,
+      opponent: null
     }
   }
 
@@ -35,7 +36,11 @@ class App extends Component {
       });
   }
 
-  chooseChat(userId) {
+  chooseChat(user) {
+    const userId = user.phoneNumber;
+    this.setState({
+      opponent: user
+    });
     firebase.database()
       .ref(`users/${this.props.currentUser.phoneNumber}/chatWith/${userId}`)
       .once('value', (snapshot) => {
@@ -47,6 +52,20 @@ class App extends Component {
           });
         }
       });
+  }
+
+  _renderConversation() {
+    return (
+      <ChatShell opponent={this.state.opponent} chatId={this.state.currentChat} />
+    );
+  }
+
+  _renderEmptyConversation() {
+    return (
+      <div className="chat-empty-container">
+        <h1>Welcome to WazzApp</h1>
+      </div>
+    );
   }
 
   render() {
@@ -61,10 +80,8 @@ class App extends Component {
         </div>
         {
           this.state.currentChat ?
-            <ChatConversation /> :
-            <div className="chat-empty-container">
-              <h1>Welcome to WazzApp</h1>
-            </div>
+            this._renderConversation() :
+            this._renderEmptyConversation()
         }
       </div>
     );

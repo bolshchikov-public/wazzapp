@@ -1,8 +1,24 @@
 .chat-conversation-container {
   width: 100%;
-  height: 100%;
+  height: calc(100% - var(--header-height));
+  display: block;
+}
+
+.chat-conversation-container::after {
+  content: "";
   background-image: url('./chat-background.png');
   background-color: #e0b78d;
   background-size: contain;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
   opacity: 0.3;
+}
+
+
+.chat-conversation-body {
+  height: calc(100% - var(--header-height));
 }

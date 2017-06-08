@@ -1,5 +1,6 @@
 .chat-container {
   --chat-list-width: 30vw;
+  --header-height: 62px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -9,6 +10,7 @@
 .chat-list-container {
   background-color: white;
   width: var(--chat-list-width);
+  min-width: 210px;
   height: 100%;
   flex-shrink: 0;
 }
