@@ -4,7 +4,7 @@ import './UserManagement.css';
 import ProfileImage from '../ProfileImage';
 import Logout from '../Logout';
 
-const UserManagement = ({ currentUser, onLogout }) => {
+const UserManagement = ({ onLogout }, { currentUser }) => {
   return (
     <div className="user-management-container">
       <ProfileImage user={currentUser} />
@@ -13,8 +13,11 @@ const UserManagement = ({ currentUser, onLogout }) => {
   )
 }
 
-UserManagement.propTypes = {
+UserManagement.contextTypes = {
   currentUser: PropTypes.object.isRequired,
+};
+
+UserManagement.propTypes = {
   onLogout: PropTypes.func.isRequired
 }
 

@@ -22,7 +22,7 @@ class FilteredChatList extends Component {
         {
           Object
             .keys(this.state)
-            .filter(phoneNumber => phoneNumber !== this.props.currentUser.phoneNumber)
+            .filter(phoneNumber => phoneNumber !== this.context.currentUser.phoneNumber)
             .map(phoneNumber => <ChatListItem key={phoneNumber} user={this.state[phoneNumber]} onSelect={this.props.onSelect}/>)
         }
       </div>
@@ -33,8 +33,11 @@ class FilteredChatList extends Component {
   }
 }
 
+FilteredChatList.contextTypes = {
+  currentUser: PropTypes.object.isRequired
+};
+
 FilteredChatList.propTypes = {
-  currentUser: PropTypes.object.isRequired,
   onSelect: PropTypes.func.isRequired
 };
 

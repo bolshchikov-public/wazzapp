@@ -16,6 +16,7 @@ class ChatConversation extends Component {
   _createMessage(body) {
     return {
       body,
+      senderId: this.context.currentUser.phoneNumber,
       timestamp: Date.now()
     };
   }
@@ -62,12 +63,18 @@ class ChatConversation extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="chat-conversation-container">
         <div className="chat-conversation-body">
-          <ul style={{margin: 0}}>
-            {Object.keys(this.state).map((messageId) => <li key={messageId}>{this.state[messageId].body}</li>)}
+          <ul style={{ margin: 0 }}>
+            {Object.keys(this.state).map((messageId) => {
+              const message = this.state[messageId];
+              if (message.senderId === this.context.currentUser.phoneNumber) {
+                return <li style={{float: 'right'}} key={messageId}>{message.body}</li>;  
+              } else {
+                return <li key={messageId}>{message.body}</li>;
+              }
+            })}
           </ul>
         </div>
         <ConversationInput onMessage={this._onMessage.bind(this)} />
@@ -75,6 +82,10 @@ class ChatConversation extends Component {
     )
   }
 }
+
+ChatConversation.contextTypes = {
+  currentUser: PropTypes.object.isRequired
+};
 
 ChatConversation.propTypes = {
   chatId: PropTypes.string.isRequired

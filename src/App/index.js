@@ -42,10 +42,10 @@ class App extends Component {
       opponent: user
     });
     firebase.database()
-      .ref(`users/${this.props.currentUser.phoneNumber}/chatWith/${userId}`)
+      .ref(`users/${this.context.currentUser.phoneNumber}/chatWith/${userId}`)
       .once('value', (snapshot) => {
         if (snapshot.val() === null) {
-          this._createNewChat(this.props.currentUser.phoneNumber, userId);
+          this._createNewChat(this.context.currentUser.phoneNumber, userId);
         } else {
           this.setState({
             currentChat: snapshot.val()
@@ -72,11 +72,8 @@ class App extends Component {
     return (
       <div className="chat-container">
         <div className="chat-list-container">
-          <UserManagement
-            currentUser={this.props.currentUser}
-            onLogout={this.props.onLogout}
-          />
-          <FilteredChatList currentUser={this.props.currentUser} onSelect={this.chooseChat.bind(this)} />
+          <UserManagement onLogout={this.props.onLogout} />
+          <FilteredChatList onSelect={this.chooseChat.bind(this)} />
         </div>
         {
           this.state.currentChat ?
@@ -88,9 +85,12 @@ class App extends Component {
   }
 }
 
+App.contextTypes = {
+  currentUser: PropTypes.object.isRequired
+};
+
 App.propTypes = {
-  currentUser: PropTypes.object.isRequired,
   onLogout: PropTypes.func.isRequired
-}
+};
 
 export default App;
