@@ -1,9 +1,10 @@
 // @ts-check
-import React, { Component } from 'react';
 import './ChatConversation.css';
 import PropTypes from 'prop-types';
-import ConversationInput from '../ConversationInput';
+import React, { Component } from 'react';
 import * as firebase from 'firebase/app';
+import MessageCloud from '../MessageCloud';
+import ConversationInput from '../ConversationInput';
 
 class ChatConversation extends Component {
 
@@ -66,16 +67,13 @@ class ChatConversation extends Component {
     return (
       <div className="chat-conversation-container">
         <div className="chat-conversation-body">
-          <ul style={{ margin: 0 }}>
-            {Object.keys(this.state).map((messageId) => {
-              const message = this.state[messageId];
-              if (message.senderId === this.context.currentUser.phoneNumber) {
-                return <li style={{float: 'right'}} key={messageId}>{message.body}</li>;  
-              } else {
-                return <li key={messageId}>{message.body}</li>;
-              }
-            })}
-          </ul>
+          {Object.keys(this.state).map((messageId) => {
+            const message = this.state[messageId];
+            const direction = (message.senderId === this.context.currentUser.phoneNumber) ?
+              'to' :
+              'from';
+            return <MessageCloud key={messageId} direction={direction} message={message} />;
+          })}
         </div>
         <ConversationInput onMessage={this._onMessage.bind(this)} />
       </div>

@@ -1,0 +1,25 @@
+.message-to {
+  background-color: #dcf8c6;
+  box-shadow: 1px 1px 10px 0px grey;
+  float: right;
+}
+
+.message-from {
+  background-color: white;
+  box-shadow: -1px 1px 10px 0px grey;
+  clear: both;
+}
+
+.message-cloud {
+  border-radius: 7px;
+  padding: 5px 10px;
+  margin: 5px;
+  width: 50%;
+}
+
+.message-timestamp {
+  float: right;
+  color: grey;
+  font-size: 13px;
+  font-variant: diagonal-fractions;
+}

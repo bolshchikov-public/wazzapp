@@ -21,4 +21,5 @@
 
 .chat-conversation-body {
   height: calc(100% - var(--header-height));
+  padding: 25px;
 }
