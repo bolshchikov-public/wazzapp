@@ -37,7 +37,8 @@ wazzup: {
     one: {
       m1: {
         body: 'Hello my friend',
-        timestamp: 1496234742258
+        timestamp: 1496234742258,
+        sender: 1234
       }
     }
   }
