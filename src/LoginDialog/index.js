@@ -28,7 +28,7 @@ class LoginDialog extends Component {
 
   _save() {
     window.localStorage.setItem('wazzapp-user', JSON.stringify(this.state));
-    return firebase.database().ref(`users/${this.state.phoneNumber}`).set({
+    return firebase.database().ref(`users/${this.state.phoneNumber}`).update({
       userName: this.state.userName,
       phoneNumber: this.state.phoneNumber,
       imageData: this.state.imageData
