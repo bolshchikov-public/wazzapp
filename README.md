@@ -1,5 +1,5 @@
 # Wazzapp Workshop Application
-> This app is ONLY for educational purpose. It used as a studying material for React. **Slides** are available [here](https://docs.google.com/presentation/d/14L5oiWL3wnXUksByLc607F8pnTYN6cTWZI-cc5dr_g4/edit?usp=sharing).
+> This app is **only** for educational purpose. It used as a studying material for React. **Slides** are available [here](https://docs.google.com/presentation/d/14L5oiWL3wnXUksByLc607F8pnTYN6cTWZI-cc5dr_g4/edit?usp=sharing).
 
 # Getting Started
 This workshop application is based on [create-react-app](https://github.com/facebookincubator/create-react-app) for client-side code and [firebase](https://firebase.google.com/) for hosting and real-time capabilities.
