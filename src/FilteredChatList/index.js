@@ -7,7 +7,9 @@ import ChatListItem from '../ChatListItem';
 class FilteredChatList extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      users : []
+    }
   }
 
   componentWillMount() {
@@ -19,7 +21,7 @@ class FilteredChatList extends Component {
   render() {
     return (
       <ul class="filtered-chat-list-container">
-        {this.users.filter((user) => {return user != this.context.currentUser})
+        {this.state.users.filter((user) => {return user != this.context.currentUser})
                    .map((user) => 
                           {<ChatListItem key={user.phoneNumber}
                                          user={user} 
