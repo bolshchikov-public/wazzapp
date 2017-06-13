@@ -7,6 +7,8 @@ Holds the state of the current chat list: a map of phone number to username
 
 
 ### List users
+```javascript
 firebase.database().ref('/users').on('value', (snapshop) => {
   // snapshop.val() will contain the users
 });
+```
