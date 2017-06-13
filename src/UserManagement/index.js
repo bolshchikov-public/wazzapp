@@ -5,7 +5,12 @@ import ProfileImage from '../ProfileImage';
 import Logout from '../Logout';
 
 const UserManagement = ({ onLogout }, { currentUser }) => {
-  
+  return(
+    <div>
+      <ProfileImage user={currentUser}/>
+      <Logout onLogout={onLogout}/>
+    </div>
+  );
 }
 
 UserManagement.contextTypes = {
