@@ -6,7 +6,7 @@ import ProfileImage from '../ProfileImage';
 const UserRow = ({user}) => {
     return (
         <div class="user-row">
-            <ProfileImage />
+            <ProfileImage user={user}/>
             <label>{user}</label>
         </div>
     )

@@ -10,8 +10,8 @@ class ChatListItem extends Component {
 
   render() {
     return (
-      <li class="chat-item-container" onSelect={this.props.onSelect}>
-        <UserRow name={this.props.user} />
+      <li class="chat-item-container" onClick={this.props.onSelect}>
+        <UserRow user={this.props.user} />
       </li>
     );
   }
