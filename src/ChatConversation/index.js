@@ -10,9 +10,7 @@ class ChatConversation extends Component {
 
   constructor(){
     super();
-    this.state={
-      messages: []
-    };
+    this._clearState();
   }
 
   _subscribe(chatId) {
@@ -41,17 +39,30 @@ class ChatConversation extends Component {
   }
 
   _getDirection(item){
-    return item.sender == this.props.currentUser.key ? "to" : "from";
+    return item.senderId == this.props.currentUser.phoneNumber ? "to" : "from";
   }
+
+  _clearState(){
+    this.state = {
+      messages: []
+    };
+}
 
   componentWillMount() {
     this._subscribe(this.props.chatId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this._clearState();
+    this._subscribe(nextProps.chatId);
+  }
+
   render() {
     return (
       <div className="chat-conversation-container">
-        {this.state.messages.map((item, index) => <MessageCloud key={index} message={item.body} direction={this._getDirection(item)} />)}
+        <div className=".chat-conversation-body">
+          {this.state.messages.map((item, index) => <MessageCloud key={index} message={item.body} direction={this._getDirection(item)} />)}
+        </div>
         <ConversationInput onMessage={this._saveMessage.bind(this)} />
       </div>
     )
