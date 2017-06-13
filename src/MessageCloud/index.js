@@ -8,9 +8,9 @@ const MessageCloud = ({ direction, message }) => {
   var time = new Date(message.timestamp);
   <div className="message-cloud">
   if(direction == "from") {
-    <span className="message-from">message.body</span>
+    <span className="message-from">{message.body}</span>
   } else if(direction == "to") {
-    <span className = "message-to">message.body</span>
+    <span className = "message-to">{message.body}</span>
   }
   <span className="message-timestamp">{`${time.getHours()}:${time.getMinutes()}`}</span>
   </div>
