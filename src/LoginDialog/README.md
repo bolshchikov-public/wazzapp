@@ -10,7 +10,7 @@ Adds the user to localStorage (key: `wazzapp-user`)
 
 Saves the user to firebase:
 
-```
+```javascript
 firebase.database().ref(`users/${this.state.phoneNumber}`).update({
   userName: this.state.userName,
   phoneNumber: this.state.phoneNumber,
