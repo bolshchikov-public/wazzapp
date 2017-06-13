@@ -4,4 +4,4 @@ A container that holds:
 * `<App/>`
 * `<Login/>`
 
-Holds the state of the current user
+Adds the current user to the context
