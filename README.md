@@ -12,7 +12,7 @@ This workshop application is based on [create-react-app](https://github.com/face
 ## Local development
 1. `git clone https://github.com/bolshchikov-public/wazzapp`
 2. `cd wazzapp`
-3. `yarn install`
+3. `yarn install --no-lockfile`
 4. `yarn start`
 5. `http://localhost:3000`
 
