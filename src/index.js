@@ -2,9 +2,9 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginImageCapture from './LoginImageCapture'
+import AppShell from './AppShell';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-ReactDOM.render(<LoginImageCapture />, document.getElementById('root'));
+ReactDOM.render(<AppShell />, document.getElementById('root'));
 registerServiceWorker();
