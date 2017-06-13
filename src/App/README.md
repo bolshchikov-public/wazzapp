@@ -5,4 +5,4 @@ A container that holds a
 * `<UserMngmt/>`
 * `<ChatShell/>`
 
-Holds the state of the current chat
+Holds the state of the current chat & the oponent (other chat member)
