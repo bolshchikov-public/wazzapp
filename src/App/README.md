@@ -12,7 +12,7 @@ Holds the state of the current chat & the oponent (other chat member)
 firebase.database()
   .ref(`users/${this.context.currentUser.phoneNumber}/chatWith/${userId}`)
   .once('value', (snapshot) => {
-    \\ get the chatId by snapshot.val() 
+    // get the chatId by snapshot.val() 
   });
 ```
 
