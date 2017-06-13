@@ -46,17 +46,22 @@ handleSelectedUser (user) {
   constructor (props) {
     super(props);
     this.state = {
-      currentChat : {},
-      otherUser : {}
+      currentChat : null,
+      otherUser : null
     };
   };
 
   render () {
     return (
-      <div>
+      <div className="chat-container">
+        <div className="chat-list-container">
         <FilteredChatList onSelect={this.handleSelectedUser} />
         <UserManagement onLogout={this.props.onLogout}/>
-        <ChatShell opponent={this.state.otherUser.phoneNumber} chatId={this.state.currentChat}/>
+        </div>
+        {
+          this.state.currentChat ? <ChatShell opponent={this.state.otherUser.phoneNumber} chatId={this.state.currentChat}/>
+                                 : <div className="chat-empty-container"><h1>Welcome to WazzUp</h1></div>
+        }  
       </div>
     );
   };
